@@ -1,0 +1,15 @@
+.timeline { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.timeline__item { position: relative; display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); padding-bottom: var(--space-4); }
+/* Vertical line linking the markers */
+.timeline__item::before { content: ""; position: absolute; left: 11px; top: 26px; bottom: 2px; width: 2px; background: var(--border-strong); border-radius: 2px; }
+.timeline__item:last-child { padding-bottom: 0; }
+.timeline__item:last-child::before { display: none; }
+.timeline__marker { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--gray-100); color: var(--text-muted); }
+.timeline__item--agent .timeline__marker { background: var(--accent-subtle); color: var(--accent); }
+.timeline__item--human .timeline__marker { background: var(--warning-subtle); color: var(--warning-text); }
+.timeline__item--integration .timeline__marker { background: var(--success-subtle); color: var(--success-text); }
+.timeline__body { display: flex; flex-direction: column; gap: 2px; padding-top: 2px; }
+.timeline__title { font-size: var(--text-sm); font-weight: 600; }
+.timeline__meta { font-size: var(--text-xs); color: var(--text-muted); }
+.timeline__kind { font-weight: 600; }
+.timeline__empty { margin: 0; color: var(--text-muted); }

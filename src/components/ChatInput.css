@@ -1,0 +1,23 @@
+.chat-input { display: flex; flex-direction: column; gap: var(--space-1); }
+.chat-input__box {
+  display: flex; align-items: flex-end; gap: var(--space-2); padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+  background: var(--surface); border: 1px solid var(--border-control); border-radius: var(--radius-lg);
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+}
+.chat-input__box:focus-within { border-color: var(--accent); box-shadow: var(--focus-ring); }
+.chat-input__box.is-disabled { background: var(--bg-disabled); }
+.chat-input__text { flex: 1; font: inherit; line-height: 1.5; resize: none; border: 0; outline: none; background: transparent; color: var(--text); padding: var(--space-1) 0; max-height: 200px; }
+.chat-input__text::placeholder { color: var(--text-muted); }
+.chat-input__btn { flex: none; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: var(--accent); color: var(--on-accent); cursor: pointer; transition: background var(--duration-fast), box-shadow var(--duration-base) var(--ease-out); }
+.chat-input__btn:hover:not(:disabled) { background: var(--accent-hover); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 28%, transparent); }
+.chat-input__btn:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.chat-input__btn:disabled { background: var(--bg-disabled); color: var(--text-disabled); cursor: not-allowed; }
+.chat-input__btn--stop { background: var(--text); }
+.chat-input__btn--stop:hover:not(:disabled) { background: var(--text); }
+.chat-input__hint { margin: 0; padding-left: var(--space-4); font-size: var(--text-xs); color: var(--text-muted); }
+.chat-input__suggestions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-2); }
+.chat-input__suggestions-label { font-size: var(--text-xs); color: var(--text-muted); margin-right: var(--space-1); }
+.chat-input__chip { min-height: 32px; padding: 0 var(--space-3); font: inherit; font-size: var(--text-sm); font-weight: 500; color: var(--accent); background: var(--accent-subtle); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: var(--radius-md); cursor: pointer; transition: background var(--duration-fast), border-color var(--duration-fast); }
+.chat-input__chip:hover:not(:disabled) { border-color: var(--accent); }
+.chat-input__chip:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.chat-input__chip:disabled { color: var(--text-muted); background: var(--bg-disabled); cursor: not-allowed; }

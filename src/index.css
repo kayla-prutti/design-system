@@ -1,0 +1,23 @@
+@import "./tokens/tokens.css";
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  transition: background var(--duration-base), color var(--duration-base);
+}
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+code { font-family: var(--font-mono); font-size: 0.9em; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Reduced motion: stop decorative animation everywhere. The spinner keeps turning, slowly, because it signals progress. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .btn__spinner { animation-duration: 1.5s !important; animation-iteration-count: infinite !important; }
+}
+.skip-link { position: absolute; left: var(--space-4); top: -100px; z-index: 200; padding: var(--space-2) var(--space-4); background: var(--accent); color: var(--on-accent); border-radius: var(--radius-sm); font-weight: 600; text-decoration: none; }
+.skip-link:focus { top: var(--space-4); outline: none; box-shadow: var(--focus-ring); }

@@ -1,0 +1,15 @@
+.switch { display: inline-flex; align-items: center; gap: var(--space-3); cursor: pointer; font-size: var(--text-sm); font-weight: 500; }
+.switch__input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.switch__track {
+  width: 40px; height: 24px; padding: 2px; border-radius: var(--radius-full);
+  background: var(--border-control); transition: background var(--duration-base); /* off track: 3.2:1 */
+}
+.switch__thumb {
+  display: block; width: 20px; height: 20px; border-radius: 50%; background: #fff;
+  box-shadow: var(--shadow-md); transition: transform var(--duration-base) var(--ease-out);
+}
+.switch__input:checked + .switch__track { background: var(--accent); }
+.switch__input:checked + .switch__track .switch__thumb { transform: translateX(16px); }
+.switch__input:focus-visible + .switch__track { box-shadow: var(--focus-ring); }
+.switch { min-height: 24px; }
+.switch:hover .switch__track { filter: brightness(0.95); }

@@ -1,0 +1,13 @@
+.search { position: relative; display: flex; align-items: center; }
+.search__icon { position: absolute; left: var(--space-3); color: var(--text-muted); pointer-events: none; }
+.search__input {
+  width: 100%; font: inherit; height: 40px; padding: 0 var(--space-8) 0 calc(var(--space-3) + 16px + var(--space-2));
+  background: var(--surface); color: var(--text); border: 1px solid var(--border-control); border-radius: var(--radius-md);
+  transition: border-color var(--duration-fast), box-shadow var(--duration-fast);
+}
+.search__input::-webkit-search-cancel-button { display: none; }
+.search__input::placeholder { color: var(--text-muted); }
+.search__input:focus-visible { outline: none; border-color: var(--accent); box-shadow: var(--focus-ring); }
+.search__clear { position: absolute; right: var(--space-2); display: grid; place-items: center; width: 24px; height: 24px; padding: 0; background: none; border: 0; border-radius: 50%; color: var(--text-muted); cursor: pointer; }
+.search__clear:hover { color: var(--text); background: var(--bg); }
+.search__clear:focus-visible { outline: none; box-shadow: var(--focus-ring); }

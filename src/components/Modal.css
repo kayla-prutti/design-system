@@ -1,0 +1,28 @@
+.modal {
+  padding: 0; border: 1px solid var(--border); border-radius: var(--radius-lg);
+  background: var(--surface-raised); color: var(--text); box-shadow: var(--shadow-lg);
+  width: min(440px, calc(100vw - var(--space-8)));
+}
+.modal[open] { animation: modal-in var(--duration-base) var(--ease-out); }
+.modal::backdrop { background: rgb(0 0 0 / 0.5); backdrop-filter: blur(2px); }
+.modal { overflow: hidden; }
+.modal__header { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-6); border-top: 4px solid var(--border-strong); border-bottom: 1px solid var(--border); }
+.modal__icon { display: grid; place-items: center; flex: none; }
+.modal__body { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); }
+.modal__title { flex: 1; font-size: var(--text-lg); }
+.modal__close { flex: none; display: grid; place-items: center; width: 32px; height: 32px; margin-right: calc(-1 * var(--space-2)); padding: 0; background: none; border: 0; border-radius: var(--radius-sm); color: var(--text-muted); cursor: pointer; }
+.modal__close:hover { color: var(--text); background: color-mix(in srgb, var(--text) 8%, transparent); }
+.modal__close:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.modal__body { color: var(--text); }
+.modal__header--danger { border-top-color: var(--danger); background: var(--danger-subtle); }
+.modal__header--danger .modal__icon { color: var(--danger-text); }
+.modal__header--success { border-top-color: var(--success); background: var(--success-subtle); }
+.modal__header--success .modal__icon { color: var(--success-text); }
+.modal__header--warning { border-top-color: var(--warning); background: var(--warning-subtle); }
+.modal__header--warning .modal__icon { color: var(--warning-text); }
+@keyframes modal-in { from { opacity: 0; transform: translateY(8px) scale(0.98); } }
+/* Soft buttons inside a modal with a variant pick up its color */
+.modal--danger { --btn-tint: var(--danger); --btn-tint-text: var(--danger-text); }
+.modal--success { --btn-tint: var(--success); --btn-tint-text: var(--success-text); }
+.modal--warning { --btn-tint: var(--warning); --btn-tint-text: var(--warning-text); }
+.modal__actions { display: flex; justify-content: flex-end; gap: var(--space-2); padding: 0 var(--space-6) var(--space-6); }

@@ -1,0 +1,20 @@
+.tabs__list { display: flex; overflow: hidden; gap: var(--space-1); border-bottom: 1px solid var(--border); }
+.tabs__tab {
+  font: inherit; font-weight: 600; color: var(--text-muted); background: none; cursor: pointer;
+  padding: var(--space-2) var(--space-4); border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color var(--duration-fast), border-color var(--duration-fast);
+}
+.tabs__tab:hover { color: var(--text); }
+.tabs__tab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+.tabs__tab:focus-visible { outline: none; box-shadow: var(--focus-ring); border-radius: var(--radius-sm); }
+.tabs__panel { padding: var(--space-4) 0; border-radius: var(--radius-sm); }
+.tabs__panel:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.tabs__tab { white-space: nowrap; }
+.tabs__list--hidden { visibility: hidden; height: 0; border: 0; }
+.tabs__menu { position: relative; border-bottom: 1px solid var(--border); padding-bottom: var(--space-2); }
+.tabs__menu-btn { display: inline-flex; align-items: center; gap: var(--space-2); font: inherit; font-weight: 600; color: var(--text); background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); padding: var(--space-2) var(--space-3); cursor: pointer; }
+.tabs__menu-btn:focus-visible, .tabs__dropdown button:focus-visible { outline: none; box-shadow: var(--focus-ring); }
+.tabs__dropdown { position: absolute; z-index: 5; top: calc(100% - var(--space-1)); left: 0; min-width: 200px; margin: 0; padding: var(--space-1); list-style: none; background: var(--surface-raised); border: 1px solid var(--border-strong); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); }
+.tabs__dropdown button { width: 100%; text-align: left; font: inherit; background: none; border: 0; color: var(--text); padding: var(--space-2) var(--space-3); border-radius: var(--radius-sm); cursor: pointer; }
+.tabs__dropdown button:hover { background: var(--bg); }
+.tabs__dropdown button[aria-current="true"] { color: var(--accent); background: var(--accent-subtle); }
